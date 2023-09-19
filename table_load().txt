@@ -1,0 +1,13 @@
+void table_load()
+    {
+            try
+            {
+                pst = con.prepareStatement("select * from bank");
+                ResultSet rs = pst.executeQuery();
+                table1.setModel(DbUtils.resultSetToTableModel(rs));
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
+    }
